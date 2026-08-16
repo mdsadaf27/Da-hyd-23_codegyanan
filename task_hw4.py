@@ -1,8 +1,6 @@
  # Task 1: Student Marks Manager
 """
 marks = []
-
-# Accept 3 marks
 for i in range(3):
     mark = int(input("Enter mark: "))
     marks.append(mark)
@@ -26,13 +24,8 @@ print("Number of marks:", len(marks))
 numbers = [20, 10, 30, 20, 40, 20]
 
 print("Original list:", numbers)
-
-# Sort in ascending order
 numbers.sort()
-
 print("Ascending order:", numbers)
-
-# Reverse to descending order
 numbers.reverse()
 
 print("Descending order:", numbers)
@@ -45,8 +38,6 @@ if search_number in numbers:
     print("First index:", numbers.index(search_number))
 else:
     print("Number not found.")
-
-# Numerical summary
 print("\nSmallest value:", min(numbers))
 print("Largest value:", max(numbers))
 print("Total:", sum(numbers))
@@ -66,7 +57,6 @@ for number in numbers:
         odd.append(number)
 
 print("Original list:", numbers)
-
 print("\nEven numbers:", even)
 print("Odd numbers:", odd)
 print("\nFirst three values:", numbers[:3])
@@ -82,18 +72,10 @@ print("Backup list:", backup)
 
 names = ["Asha", "Rahul", "Asha", "John", "Rahul"]
 unique_names = set(names)
-
 print("Unique names:", unique_names)
-
-# Add Meera
 unique_names.add("Meera")
-
-# Add Arun and Priya together
 unique_names.update(["Arun", "Priya"])
-
 print("\nAfter adding names:", unique_names)
-
-# Check whether John exists
 if "John" in unique_names:
     unique_names.remove("John")
     print("John was removed.")
