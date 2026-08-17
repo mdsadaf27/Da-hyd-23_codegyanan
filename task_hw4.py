@@ -44,96 +44,80 @@ print("Total:", sum(numbers))
 
 
 # Task 3: Even and Odd Number Separator
-
-numbers = [10, 15, 20, 25, 30, 35]
-
-even = []
-odd = []
-for number in numbers:
-
-    if number % 2 == 0:
-        even.append(number)
+'''
+numbers=[10,15,20,25,30,35]
+even=[]
+odd=[]
+for i in numbers:
+    if i%2==0:
+        even.append(i)
     else:
-        odd.append(number)
-
-print("Original list:", numbers)
-print("\nEven numbers:", even)
-print("Odd numbers:", odd)
-print("\nFirst three values:", numbers[:3])
-print("Last three values:", numbers[-3:])
-backup = numbers.copy()
+        odd.append(i)
+print("even list:",even)
+print("odd list:",odd)
+print("first 3 numbers:",numbers[:3])
+print("first 3 numbers:",numbers[3:])
+copy_numbers=numbers.copy()
 numbers.clear()
-
-print("\nOriginal list after clear():", numbers)
-print("Backup list:", backup)
+print("original numbers:",numbers)
+print("copy numbers:",copy_numbers)
+'''
 
 
 # Task 4: Unique Name Manager
+'''
+names=['Asha','Rahul','Asha','John','Rahul']
+x=set(names)
+print(x)
+x.add('Meera')
+print(x)
+x.update(("Arun","Priya"))
+print(x)
+if 'John' in x:
+    x.remove("John")
+print(x)
+x.discard('John')
+for i in x:
+    print(i)
+'''
 
-names = ["Asha", "Rahul", "Asha", "John", "Rahul"]
-unique_names = set(names)
-print("Unique names:", unique_names)
-unique_names.add("Meera")
-unique_names.update(["Arun", "Priya"])
-print("\nAfter adding names:", unique_names)
-if "John" in unique_names:
-    unique_names.remove("John")
-    print("John was removed.")
+#5.Course student comparision
+'''
+python_students={'Asha','Rahul','John','Meera'}
+da_students={'Rahul','Meera','Arun'}
+a=python_students.union(da_students)
+b=python_students.intersection(da_students)
+c=python_students.difference(da_students)
+d=python_students.symmetric_difference(da_students)
+print('All Students:')
+for i in a:
+    print(i)
+print('Students have both courses:')
+for j in b:
+    print(j)
+print('Only Python:') 
+for k in c:
+    print(k)
+print('Only one course:')
+for m in d:
+    print(m)
+    
+print("\nDA is subset of Python:", da_students.issubset(python_students))
+if da_students.issubset(python_students):
+    print("All DA students are also Python students")
 else:
-    print("John was not found.")
-unique_names.discard("David")
+    print("All DA students are not Python students")
 
-# Display every unique name
-print("\nFinal unique names:")
-
-for name in unique_names:
-    print(name)
-    """
-# Task 5: Course Student Comparison
-
-python_students = {"Asha", "Rahul", "John", "Meera"}
-da_students = {"Rahul", "Meera", "Arun"}
-
-# Union
-all_students = python_students.union(da_students)
-
-# Intersection
-both_courses = python_students.intersection(da_students)
-only_python = python_students.difference(da_students)
-only_one_course = python_students.symmetric_difference(da_students)
-da_is_subset = da_students.issubset(python_students)
-python_is_superset = python_students.issuperset(da_students)
-courses_are_disjoint = python_students.isdisjoint(da_students)
-
-
-print("Students in both courses:", all_students)
-print("Students learning both courses:", both_courses)
-print("Students only in Python:", only_python)
-print("Students in only one course:", only_one_course)
-
-print("\nIs DA a subset of Python?", da_is_subset)
-print("Is Python a superset of DA?", python_is_superset)
-print("Are the two courses disjoint?", courses_are_disjoint)
-
-
-# Use loops to display results
-
-print("\nAll students:")
-for student in all_students:
-    print(student)
-
-print("\nStudents in both courses:")
-for student in both_courses:
-    print(student)
-
-# Conditions to explain relationships
-
-if da_is_subset:
-    print("\nDA students are completely inside Python students.")
+print("Python is superset of DA:", python_students.issuperset(da_students))
+if python_students.issuperset(da_students):
+    print("Python contains all DA students")
 else:
-    print("\nDA students are NOT completely inside Python students.")
+    print("Python does not contain all DA students")
 
-if courses_are_disjoint:
-    print("The two courses have no students in common.")
+print("Both sets are disjoint:", python_students.isdisjoint(da_students))
+if python_students.isdisjoint(da_students):
+    print("There are no common students")
 else:
-    print("The two courses have students in common.")
+    print("There are common students in both courses")
+
+'''
