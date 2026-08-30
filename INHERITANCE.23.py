@@ -94,7 +94,7 @@ class kid(father):
 obj=kid()
 obj.father_property()
 obj.kid_property()
-'''
+
 #in the above case it is giving same value for father also as 2lakhs and i again changed
 #to avoid this use super class constructor
 class father:
@@ -117,8 +117,109 @@ obj=kid()
 obj.father_property()
 obj.kid_property()
 
+# Task 1 --> Hierarchical Inheritance
+
+class Hospital:  # Parent class
+    def init(self, name, department):
+        self.name = name
+        self.department = department
+
+    def display(self):
+        print(f'Name: {self.name}')
+        print(f'Department: {self.department}')
 
 
+class Doctor(Hospital):  # Child 1
+    def init(self, name, department):
+        super().init(name, department)
+
+
+class Nurse(Hospital):  # Child 2
+    def init(self, name, department):
+        super().init(name, department)
+
+
+class Receptionist(Hospital):  # Child 3
+    def init(self, name, department):
+        super().init(name, department)
+
+
+# User input
+
+name1 = input('Enter Doctor name: ')
+department1 = input('Enter Doctor department: ')
+
+name2 = input('Enter Nurse name: ')
+department2 = input('Enter Nurse department: ')
+
+name3 = input('Enter Receptionist name: ')
+department3 = input('Enter Receptionist department: ')
+
+
+d1 = Doctor(name1, department1)
+n1 = Nurse(name2, department2)
+r1 = Receptionist(name3, department3)
+
+
+d1.display()
+n1.display()
+r1.display()
+
+'''
+
+# Task 2 --> Hybrid Inheritance
+
+class Company:  # Parent class
+    def init(self, company_name):
+        self.company_name = company_name
+
+
+class Employee(Company):  # Child class
+    def init(self, company_name, emp_id):
+        Company.init(self, company_name)
+        self.emp_id = emp_id
+
+
+class Manager(Company):  # Child class
+    def init(self, company_name, manager_name):
+        Company.init(self, company_name)
+        self.manager_name = manager_name
+
+
+# Hierarchical inheritance is formed above
+# Employee and Manager both inherit Company
+
+
+class Developer(Employee, Manager):  # Multiple inheritance
+    def init(self, company_name, emp_id, manager_name,
+                 programming_language, salary):
+
+        Employee.init(self, company_name, emp_id)
+        Manager.init(self, company_name, manager_name)
+
+        self.programming_language = programming_language
+        self.salary = salary
+
+    def display(self):
+        print(f'Company Name: {self.company_name}')
+        print(f'Employee ID: {self.emp_id}')
+        print(f'Manager Name: {self.manager_name}')
+        print(f'Programming Language: {self.programming_language}')
+        print(f'Salary: {self.salary}')
+
+
+# User input
+
+company = input('Enter company name: ')
+emp_id = int(input('Enter employee ID: '))
+manager = input('Enter manager name: ')
+language = input('Enter programming language: ')
+salary = int(input('Enter salary: '))
+
+
+d1 = Developer(company, emp_id, manager, language, salary)
+
+d1.display()
 
 
 
