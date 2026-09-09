@@ -1,0 +1,84 @@
+{
+  "users": {
+    "U100": {
+      "id": "U100",
+      "name": "Devika Rao",
+      "email": "devika.rao@mail.com",
+      "username": "devika",
+      "password": "demo1234",
+      "membership": "premium",
+      "status": "approved",
+      "joined": "2026-09-09"
+    }
+  },
+  "pending": {
+    "U201": {
+      "id": "U201",
+      "name": "Sam Ferreira",
+      "email": "sam.f@mail.com",
+      "username": "samf",
+      "password": "pass1234",
+      "membership": "basic",
+      "requested_at": "2026-09-09"
+    }
+  },
+  "books": {
+    "B001": {
+      "id": "B001",
+      "title": "The Salt Path Home",
+      "author": "Nadia Okoro",
+      "category": "Fiction",
+      "total": 3,
+      "available": 2
+    },
+    "B002": {
+      "id": "B002",
+      "title": "Quiet Mechanics",
+      "author": "Felix Aran",
+      "category": "Science",
+      "total": 2,
+      "available": 1
+    },
+    "B003": {
+      "id": "B003",
+      "title": "A Ledger of Rivers",
+      "author": "Marta Solheim",
+      "category": "History",
+      "total": 4,
+      "available": 4
+    },
+    "B004": {
+      "id": "B004",
+      "title": "Loose Threads",
+      "author": "Priya Chandran",
+      "category": "Poetry",
+      "total": 2,
+      "available": 1
+    },
+    "B005": {
+      "id": "B005",
+      "title": "Building Small Machines",
+      "author": "Wren Castillo",
+      "category": "Technology",
+      "total": 2,
+      "available": 2
+    }
+  },
+  "issues": {
+    "I001": {
+      "id": "I001",
+      "user_id": "U100",
+      "book_id": "B002",
+      "issue_date": "2026-08-30",
+      "due_date": "2026-09-20",
+      "status": "issued"
+    }
+  },
+  "returns": {},
+  "next_id": {
+    "user": 202,
+    "book": 6,
+    "issue": 2,
+    "return": 1
+  }
+}
